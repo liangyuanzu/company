@@ -19,7 +19,8 @@
     "ci": "npm run lint && npm run cov && npm run tsc",
     "autod": "autod",
     "lint": "eslint . --ext .ts",
-    "clean": "ets clean"
+    "clean": "ets clean",
+    "sequelize-cli-ts": "node -r ts-node/register ./node_modules/sequelize-cli/lib/sequelize"
   },
   "dependencies": {
     "egg": "^2.6.1",
@@ -34,12 +35,13 @@
     "@types/supertest": "^2.0.0",
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
-    "egg-ci": "^1.8.0",
     "egg-bin": "^4.11.0",
+    "egg-ci": "^1.8.0",
     "egg-mock": "^3.16.0",
-    "tslib": "^1.9.0",
     "eslint": "^6.7.2",
     "eslint-config-egg": "^8.0.0",
+    "sequelize-cli": "^6.2.0",
+    "tslib": "^1.9.0",
     "typescript": "^3.0.0"
   },
   "engines": {
@@ -52,7 +54,9 @@
     "type": "git",
     "url": ""
   },
-  "eslintIgnore": ["coverage"],
+  "eslintIgnore": [
+    "coverage"
+  ],
   "author": "liangyuanzu",
   "license": "MIT"
 }
