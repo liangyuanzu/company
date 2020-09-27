@@ -1,4 +1,4 @@
-import { EggPlugin } from 'egg';
+import { EggPlugin } from "egg";
 
 const plugin: EggPlugin = {
   // static: true,
@@ -6,6 +6,10 @@ const plugin: EggPlugin = {
   //   enable: true,
   //   package: 'egg-view-nunjucks',
   // },
+  sequelize: {
+    enable: true,
+    package: "egg-sequelize-ts",
+  },
 };
 
 export default plugin;
