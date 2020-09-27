@@ -1,15 +1,17 @@
-import { EggPlugin } from "egg";
+import { EggPlugin } from 'egg'
 
 const plugin: EggPlugin = {
-  // static: true,
-  // nunjucks: {
-  //   enable: true,
-  //   package: 'egg-view-nunjucks',
-  // },
+  // 开启sequelize-typescript
   sequelize: {
     enable: true,
-    package: "egg-sequelize-ts",
+    package: 'egg-sequelize-ts'
   },
-};
 
-export default plugin;
+  // 开启前端数据校验
+  validate: {
+    enable: true,
+    package: 'egg-validate'
+  }
+}
+
+export default plugin

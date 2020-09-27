@@ -1,37 +1,37 @@
 /**
  * @desc 用户表
  */
-import { AutoIncrement, Column, DataType, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { AutoIncrement, Column, DataType, Model, PrimaryKey, Table } from 'sequelize-typescript'
 @Table({
-  modelName: "user",
+  modelName: 'user'
 })
 export class User extends Model<User> {
   @PrimaryKey
   @AutoIncrement
   @Column({
     type: DataType.INTEGER,
-    comment: "用户ID",
+    comment: '用户ID'
   })
-  id: number;
+  id: number
 
   @Column({
-    comment: "用户姓名",
+    comment: '用户姓名'
   })
-  name: string;
+  name: string
 
   @Column({
-    comment: "用户年龄",
+    comment: '用户年龄'
   })
-  age: number;
+  age: number
 
   @Column({
-    field: "created_at",
+    field: 'created_at'
   })
-  createdAt: Date;
+  createdAt: Date
 
   @Column({
-    field: "updated_at",
+    field: 'updated_at'
   })
-  updatedAt: Date;
+  updatedAt: Date
 }
-export default () => User;
+export default () => User
