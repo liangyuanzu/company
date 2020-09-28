@@ -1,10 +1,11 @@
 import { Controller } from 'egg'
-var svgCaptcha = require('svg-captcha')
+import svgCaptcha = require('svg-captcha')
 
 export default class UtilController extends Controller {
   public async imageCode() {
     const { ctx } = this
-    var captcha = svgCaptcha.create({
+    // 1.生成验证码
+    const c = svgCaptcha.create({
       size: 4, // 验证码长度
       width: 160, // 验证码图片宽度
       height: 60, // 验证码图片高度
@@ -14,6 +15,13 @@ export default class UtilController extends Controller {
       color: true, // 验证码的字符是否有颜色，默认没有，如果设定了背景，则默认有
       background: '#eee' // 验证码图片背景颜色
     })
-    ctx.body = captcha.data
+    // 2.保存生成的验证码
+    ctx.session.captcha = {
+      code: c.text,
+      expire: Date.now() + 60 * 1000 // 验证码1分钟之后过期
+    }
+
+    // 3.将验证码发送给客户端
+    ctx.body = c.data
   }
 }

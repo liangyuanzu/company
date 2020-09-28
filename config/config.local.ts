@@ -9,14 +9,24 @@ export default () => {
     username: 'root',
     password: 'root',
     port: 3306,
-    database: 'company',
+    database: 'company'
+  }
+
+  // Redis相关配置
+  config.redis = {
+    client: {
+      host: '127.0.0.1',
+      port: 6379,
+      password: '',
+      db: 0
+    }
   }
 
   // 禁用CSRF安全校验
   config.security = {
     csrf: {
-      enable: false,
-    },
+      enable: false
+    }
   }
 
   return config
