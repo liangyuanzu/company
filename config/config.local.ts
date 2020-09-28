@@ -22,6 +22,14 @@ export default () => {
     }
   }
 
+  // 邮箱相关配置
+  config.smtp = {
+    host: 'smtp.qq.com',
+    port: 465,
+    user: 'liangyuanzu@foxmail.com', // 发送邮件的邮箱
+    pass: `bnwlqlfvlszvdieh` // 邮箱对应的授权码
+  }
+
   // 禁用CSRF安全校验
   config.security = {
     csrf: {

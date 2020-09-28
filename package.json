@@ -30,6 +30,7 @@
     "egg-session-redis": "^2.1.0",
     "egg-validate": "^2.0.2",
     "mysql2": "^2.2.5",
+    "nodemailer": "^6.4.10",
     "sequelize-typescript": "^1.1.0",
     "svg-captcha": "^1.4.0"
   },
