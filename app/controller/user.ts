@@ -30,7 +30,10 @@ export default class UserController extends Controller {
     const registerType = data.registerType
     switch (registerType) {
       case RegisterTypeEnum.Normal:
+        // 校验数据的格式是否正确
         ctx.validate(NormalUserRule, data)
+        // 校验当前的验证码是否正确
+        ctx.helper.verifyImageCode(data.captcha)
         break
       case RegisterTypeEnum.Email:
         ctx.validate(EmailUserRule, data)
