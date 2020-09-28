@@ -28,7 +28,8 @@
     "egg-sequelize-ts": "^0.2.3-0",
     "egg-validate": "^2.0.2",
     "mysql2": "^2.2.5",
-    "sequelize-typescript": "^1.1.0"
+    "sequelize-typescript": "^1.1.0",
+    "svg-captcha": "^1.4.0"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.40",

@@ -5,4 +5,5 @@ export default (app: Application) => {
 
   router.get('/', controller.home.index)
   router.post('/register', controller.user.create)
+  router.get('/captcha', controller.util.imageCode)
 }
