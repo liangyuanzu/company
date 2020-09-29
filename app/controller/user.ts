@@ -13,8 +13,11 @@ export default class UserController extends Controller {
   public async create() {
     const { ctx } = this
     try {
+      // 校验数据和验证码
       this.validateUserInfo()
-      ctx.success({ msg: '注册成功' })
+      //  将校验通过的数据保存到数据库
+      const data = await ctx.service.user.createUser(ctx.request.body)
+      ctx.success({ data, msg: '注册成功' })
     } catch (e) {
       if (e.errors) {
         ctx.error({ status: 400, msg: e.errors })

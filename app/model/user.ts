@@ -1,37 +1,67 @@
 /**
  * @desc 用户表
  */
-import { AutoIncrement, Column, DataType, Model, PrimaryKey, Table } from 'sequelize-typescript'
+import { Column, DataType, Model, Table, CreatedAt, UpdatedAt } from 'sequelize-typescript'
 @Table({
   modelName: 'user'
 })
 export class User extends Model<User> {
-  @PrimaryKey
-  @AutoIncrement
   @Column({
     type: DataType.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+    unique: true,
+    allowNull: false,
     comment: '用户ID'
   })
   id: number
 
   @Column({
-    comment: '用户姓名'
+    type: DataType.STRING(255),
+    allowNull: true,
+    unique: true,
+    comment: '用户姓名',
+    validate: {
+      is: /^[A-Za-z0-9]{6,}$/
+    }
   })
-  name: string
+  username: string
 
   @Column({
-    comment: '用户年龄'
+    type: DataType.STRING(255),
+    allowNull: true,
+    unique: true,
+    comment: '用户邮箱',
+    validate: {
+      isEmail: true
+    }
   })
-  age: number
+  email: string
 
   @Column({
-    field: 'created_at'
+    type: DataType.STRING(255),
+    allowNull: true,
+    unique: true,
+    comment: '用户手机',
+    validate: {
+      is: /^1[3456789]\d{9}$/
+    }
   })
+  phone: string
+
+  @Column({
+    type: DataType.STRING(255),
+    allowNull: false,
+    unique: true,
+    comment: '用户密码'
+  })
+  password: string
+
+  @CreatedAt
   createdAt: Date
 
-  @Column({
-    field: 'updated_at'
-  })
+  @UpdatedAt
   updatedAt: Date
 }
+
 export default () => User
