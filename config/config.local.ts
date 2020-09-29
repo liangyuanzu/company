@@ -30,6 +30,12 @@ export default () => {
     pass: `bnwlqlfvlszvdieh` // 邮箱对应的授权码
   }
 
+  // 短信相关配置
+  config.sms = {
+    accessKeyId: 'LTAI4G4G1wBkfN57fT1zwAdc',
+    secretAccessKey: 'xRlnxeHQ7wG3jPlekTtV3NPg5bfQ2b'
+  }
+
   // 禁用CSRF安全校验
   config.security = {
     csrf: {

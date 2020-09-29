@@ -1,5 +1,6 @@
 import ImageCode from '../util/imageCode'
 import EmailCode from '../util/emailCode'
+import SmsCode from '../util/smsCode'
 
 module.exports = {
   createImageCode(): string {
@@ -16,5 +17,13 @@ module.exports = {
 
   verifyEmailCode(clientCode: string): void {
     EmailCode.verifyEmailCode(this.ctx, clientCode)
+  },
+
+  async sendSmsCode(to: string) {
+    return await SmsCode.sendSmsCode(this.ctx, to)
+  },
+
+  verifySmsCode(clientCode: string): void {
+    SmsCode.verifySmsCode(this.ctx, clientCode)
   }
 }

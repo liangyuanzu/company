@@ -16,4 +16,15 @@ export default class UtilController extends Controller {
       ctx.error({ status: 400, msg: e.message })
     }
   }
+
+  public async smsCode() {
+    const { ctx } = this
+    try {
+      const { phone } = ctx.query
+      const data = await ctx.helper.sendSmsCode(phone)
+      ctx.success(data)
+    } catch (e) {
+      ctx.error({ status: 400, msg: e.message })
+    }
+  }
 }

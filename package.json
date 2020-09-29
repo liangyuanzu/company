@@ -35,6 +35,7 @@
     "svg-captcha": "^1.4.0"
   },
   "devDependencies": {
+    "@alicloud/pop-core": "^1.7.9",
     "@types/mocha": "^2.2.40",
     "@types/node": "^7.0.12",
     "@types/supertest": "^2.0.0",
