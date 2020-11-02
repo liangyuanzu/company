@@ -32,8 +32,8 @@ export default () => {
 
   // 短信相关配置
   config.sms = {
-    accessKeyId: 'LTAI4G4G1wBkfN57fT1zwAdc',
-    secretAccessKey: 'xRlnxeHQ7wG3jPlekTtV3NPg5bfQ2b'
+    accessKeyId: '*******************',
+    secretAccessKey: '*********************'
   }
 
   // 禁用CSRF安全校验
